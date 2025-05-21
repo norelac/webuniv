@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website Fakultas UDINUS berisi informasi seputar fakultas, himpunan mahasiswa, dan kegiatan lainnya.">
+    <title>Fakultas UDINUS</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* BACKGROUND */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR PLG ATAS */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 150px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: #0033cc;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: #0033cc;
+            border-radius: 5px;
+        }
+
+        nav ul li a.active {
+            background-color: #0033cc;
+            color: #ffcc00;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0033cc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            display: block;
+            padding: 10px 20px;
+            white-space: nowrap;
+            color: white;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #ffcc00;
+            color: #0033cc;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            background-color: #0033cc;
+            color: white;
+            padding: 50px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 24px;
+            color: #ffcc00;
+        }
+
+        /* Fakultas Section */
+        .organisasi-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        .organisai {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .organisai img {
+            width: 150px;
+            height: auto;
+            object-fit: cover;
+            margin: 50px 50px;
+            border-radius: 5px;
+            border-color: transparent;
+            box-shadow: #666;
+            
+        }
+
+        .organisasi-content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .organisasi-content h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #0800ff;
+        }
+
+        .organisasi-content p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .organisasi-content a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .organisasi-content a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            background-color: #0033cc;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .organisai {
+                flex-direction: column;
+            }
+
+            .organisai img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo-container">
+            <img src="image/udinus.jpg" alt="Logo" class="logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Profil</a>
+                <ul>
+                    <li><a href="rektor.html">Rektor</a></li>
+                    <li><a href="dosen.html">Dosen</a></li>
+                    <li><a href="portiqbal.html">Mahasiswa 1</a></li>
+                    <li><a href="portosatria.html">Mahasiswa 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Artikel</a>
+                <ul>
+                    <li><a href="artikel.html">Apa Itu Bahasa Pemrograman</a></li>
+                    <li><a href="artikel2.html">Apa itu HTML?</a></li>
+                    <li><a href="artikelcss.html">Apa itu CSS?</a></li>
+                    <li><a href="artikel_JS.html">Apa itu JS?</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Formulir</a>
+                <ul>
+                    <li><a href="#">Form 1</a></li>
+                    <li><a href="#">Form 2</a></li>
+                    <li><a href="#">Form 3</a></li>
+                    <li><a href="#">Form 4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Galeri</a>
+                <ul>
+                    <li><a href="gallery.html">Kampus</a></li>
+                    <li><a href="kegiatan.html">Kegiatan</a></li>
+                    <li><a href="hmti.html">HMTI</a></li>
+                    <li><a href="doscom.html">DOSCOM</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- header bg biru -->
+     <br>
+    <header>
+        <h1>UNIVERSITAS DIAN NUSWANTORO</h1>
+        <h2>Himpunan Teknik Informatika</h2>
+    </header>
+    <!-- ORGANISAI Section -->
+    <div class="organisasi-container">
+        <div class="organisai">
+            <img src="image/PAA.JPG" alt="Foto kegiatan Pembekalan Anggota Aktif UDINUS">
+            <div class="organisasi-content">
+                <h2 style="color: #ffcc00;">Pembekalan Anggota Aktif </h2>
+                <p>PAA (Pembekalan Anggota Aktif) adalah kegiatan bagi mahasiswa Universitas Dian Nuswantoro, khususnya mahasiswa Teknik Informatika, di mana mereka dapat bergabung dengan Himpunan Mahasiswa Teknik Informatika melalui berbagai tahapan bermakna, bermanfaat, dan menyenangkan. 
+                    Dengan bergabung, Anda akan memperoleh banyak manfaat seperti pengembangan Softskill dan Hardskill yang akan terus diasah hingga mencapai potensi maksimal. Pada tahun 2024, PAA mengusung tema "Empowering Tomorrow New Minds, New Generation".</p>
+            </div>
+        </div>
+
+        <div class="organisai">
+            <img src="image/semnasti.jpg" alt="Foto Seminar Nasional Teknologi Informasi">
+            <div class="organisasi-content">
+                <h2 style="color: brown;">SEMNASTI</h2>
+                <p>Seminar Nasional Teknik Informatika (SEMNASTI) adalah acara tahunan yang diselenggarakan oleh HMTI Universitas Dian Nuswantoro (Udinus) Semarang. SEMNASTI bertujuan memberikan wawasan terkini tentang perkembangan teknologi informasi, termasuk tren terbaru, inovasi digital, dan keamanan siber. Acara ini menjadi platform bagi mahasiswa, praktisi, dan profesional untuk berdiskusi, berbagi pengetahuan, dan memperluas jaringan. Pada setiap edisinya, SEMNASTI menghadirkan pemateri ahli dengan topik-topik terkini seputar 
+                    teknologi,digital transformation, dan tantangan serta peluang dalam menjaga keamanan dunia maya di era digital.</p>
+            </div>
+        </div>
+
+        <div class="organisai">
+            <img src="image/ITC.jpg" alt="Foto ITC">
+            <div class="organisasi-content">
+                <h2 style="color: #0800ff;">ITC </h2>
+                <p>IT Competition merupakan kegiatan yang diselenggarakan oleh HMTI di tiap tahunnya, yang memiliki tujuan untuk meningkatkan pengetahuan di dunia IT bagi para pelajar serta untuk mengetahui seberapa luas pengetahuan yang dimiliki oleh para pelajar.IT Competition merupakan kegiatan yang diselenggarakan oleh HMTI di tiap tahunnya, yang memiliki tujuan 
+                    untuk meningkatkan pengetahuan di dunia IT bagi para pelajar serta untuk mengetahui seberapa luas pengetahuan yang dimiliki oleh para pelajar.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Universitas Dian Nuswantoro. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

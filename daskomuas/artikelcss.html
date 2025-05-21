@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Blog Ku</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset Style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* BACKGROUND */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR PLG ATAS */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            width: 150px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: #0033cc;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: #0033cc;
+            border-radius: 5px;
+        }
+
+        nav ul li a.active {
+            background-color: #0033cc;
+            color: #ffcc00;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0033cc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            display: block;
+            padding: 10px 20px;
+            white-space: nowrap;
+            color: white;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #ffcc00;
+            color: #0033cc;
+        }
+
+        /* Header Styling */
+        header {
+    position: relative;
+    text-align: center;
+    background-color: #0033cc;
+    color: white;
+    padding: 50px 20px;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1); /* Shadow lebih gelap */
+    margin-bottom: 20px; /* Memberikan ruang di bawah header */
+}
+
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 24px;
+            color: #ffcc00;
+        }
+
+        /* udinus foto */
+
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            background-color: #0033cc;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .organisai {
+                flex-direction: column;
+            }
+
+            .organisai img {
+                width: 100%;
+            }
+        }
+
+        /* Reset Style */
+        header {
+            background: #0033cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Header Style */
+        header {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Footer Style */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #0033cc;
+            color: white;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        /* Main Content Style */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        main h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        main p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        main img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="image/udinus.jpg" alt="Logo" class="logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Profil</a>
+                <ul>
+                    <li><a href="rektor.html">Rektor</a></li>
+                    <li><a href="dosen.html">Dosen</a></li>
+                    <li><a href="portiqbal.html">Mahasiswa 1</a></li>
+                    <li><a href="portosatria.html">Mahasiswa 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Artikel</a>
+                <ul>
+                    <li><a href="artikel.html">Apa Itu Bahasa Pemrograman</a></li>
+                    <li><a href="artikel2.html">Apa itu HTML?</a></li>
+                    <li><a href="artikelcss.html">Apa itu CSS?</a></li>
+                    <li><a href="artikel_JS.html">Apa itu JS?</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Formulir</a>
+                <ul>
+                    <li><a href="#">Form 1</a></li>
+                    <li><a href="#">Form 2</a></li>
+                    <li><a href="#">Form 3</a></li>
+                    <li><a href="#">Form 4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Galeri</a>
+                <ul>
+                    <li><a href="gallery.html">Kampus</a></li>
+                    <li><a href="kegiatan.html">Kegiatan</a></li>
+                    <li><a href="hmti.html">HMTI</a></li>
+                    <li><a href="doscom.html">DOSCOM</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- header bg biru -->
+     <br>
+    <header>
+        <h1>UNIVERSITAS DIAN NUSWANTORO</h1>
+        <h2>Himpunan Teknik Informatika</h2>
+    </header>
+    <main>
+        <h1>Apa Itu CSS</h1>
+        <p>CSS (Cascading Style Sheets) adalah bahasa yang digunakan untuk mengatur tampilan dan tata letak elemen di halaman web. Dengan CSS, Anda dapat mengubah warna, ukuran, font, dan posisi elemen secara fleksibel, menjadikan halaman web lebih menarik dan mudah digunakan.</p>
+        <img src="image/css.jpg" alt="Belajar Pemrograman" style="display: block; margin: 20px auto;">
+        <h2>Fungsi Utama CSS</h2>
+        <p>Berikut adalah beberapa fungsi utama dari CSS dalam pengembangan web:</p>
+        <ul>
+            <li><strong>Meningkatkan Tampilan:</strong> Memberikan gaya seperti warna, font, dan efek visual pada elemen HTML.</li>
+            <li><strong>Mendukung Responsivitas:</strong> Mengatur tata letak agar sesuai dengan berbagai ukuran layar.</li>
+            <li><strong>Memisahkan Konten dari Tampilan:</strong> Membuat kode lebih terorganisir dengan memisahkan struktur HTML dari gaya visualnya.</li>
+        </ul>
+
+        <h2>Tips Mempelajari CSS</h2>
+        <p>Berikut adalah beberapa tips untuk belajar CSS dengan lebih efektif:</p>
+        <ol>
+            <li><strong>Pahami Dasar CSS:</strong> Mulailah dengan properti dasar seperti warna (color), margin, padding, dan font.</li>
+            <li><strong>Gunakan Developer Tools:</strong> Alat seperti Chrome DevTools sangat membantu dalam memahami dan menguji kode CSS.</li>
+            <li><strong>Praktik Langsung:</strong> Buat halaman web sederhana dan coba tambahkan gaya menggunakan CSS internal atau eksternal.</li>
+            <li><strong>Buat Desain Responsif:</strong> Pelajari penggunaan media queries untuk menyesuaikan layout dengan berbagai ukuran layar. Ini akan membantumu membuat situs web yang terlihat bagus di desktop maupun perangkat mobile.</li>      

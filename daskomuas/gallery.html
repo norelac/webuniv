@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website Fakultas UDINUS berisi informasi seputar fakultas, himpunan mahasiswa, dan kegiatan lainnya.">
+    <title>Fakultas UDINUS</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* BACKGROUND */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR PLG ATAS */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            width: 150px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: #0033cc;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: #0033cc;
+            border-radius: 5px;
+        }
+
+        nav ul li a.active {
+            background-color: #0033cc;
+            color: #ffcc00;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0033cc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            display: block;
+            padding: 10px 20px;
+            white-space: nowrap;
+            color: white;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #ffcc00;
+            color: #0033cc;
+        }
+
+        /* Header Styling */
+        header {
+    position: relative;
+    text-align: center;
+    background-color: #0033cc;
+    color: white;
+    padding: 50px 20px;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1); /* Shadow lebih gelap */
+    margin-bottom: 20px; /* Memberikan ruang di bawah header */
+}
+
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 24px;
+            color: #ffcc00;
+        }
+
+        /* Fakultas Section */
+        .faculty-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .faculty {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faculty img {
+            width: 200px;
+            height: auto;
+        }
+
+        .faculty-content {
+            padding: 15px;
+            flex: 1;
+        }
+
+        .faculty-content h2 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .faculty-content p {
+            margin: 0 0 10px;
+            color: #666;
+        }
+
+        .faculty-content a {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .faculty-content a:hover {
+            background: #0056b3;
+        }
+
+        /* udinus foto */
+
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            background-color: #0033cc;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .organisai {
+                flex-direction: column;
+            }
+
+            .organisai img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo-container">
+            <img src="image/udinus.jpg" alt="Logo" class="logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Profil</a>
+                <ul>
+                    <li><a href="rektor.html">Rektor</a></li>
+                    <li><a href="dosen.html">Dosen</a></li>
+                    <li><a href="portiqbal.html">Mahasiswa 1</a></li>
+                    <li><a href="portosatria.html">Mahasiswa 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Artikel</a>
+                <ul>
+                    <li><a href="artikel.html">Apa Itu Bahasa Pemrograman</a></li>
+                    <li><a href="artikel2.html">Apa itu HTML?</a></li>
+                    <li><a href="artikelcss.html">Apa itu CSS?</a></li>
+                    <li><a href="artikel_JS.html">Apa itu JS?</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Formulir</a>
+                <ul>
+                    <li><a href="#">Form 1</a></li>
+                    <li><a href="#">Form 2</a></li>
+                    <li><a href="#">Form 3</a></li>
+                    <li><a href="#">Form 4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Galeri</a>
+                <ul>
+                    <li><a href="gallery.html">Kampus</a></li>
+                    <li><a href="">Kegiatan</a></li>
+                    <li><a href="hmti.html">HMTI</a></li>
+                    <li><a href="#">DOSCOM</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- header bg biru -->
+     <br>
+    <header>
+        <h1>UNIVERSITAS DIAN NUSWANTORO</h1>
+        <h2>Himpunan Teknik Informatika</h2>
+    </header>
+
+    <!-- ORGANISAI Section -->
+    <div class="faculty-container">
+        <div class="faculty">
+            <img src="image/fik.png" alt="Fakultas Ilmu Komputer">
+            <div class="faculty-content">
+                <h2>Fakultas Ilmu Komputer</h2>
+                <p>Fakultas Ilmu Komputer atau FIK merupakan wujud nyata Dian Nuswantoro dalam bakti sosial dalam memberikan kontribusi nyata bagi pemerintah dengan mempersiapkan masyarakat yang tidak ternilai menjadi tenaga profesional dengan kompetensi yang lebih tinggi,
+                     khususnya di bidang ilmu komputer dan teknologi informatika.</p>
+            </div>
+        </div>
+
+        <div class="faculty">
+            <img src="image/feb.png" alt="Fakultas Ekonomi & Bisnis">
+            <div class="faculty-content">
+                <h2>Fakultas Ekonomi & Bisnis</h2>
+                <p>Fakultas Ekonomi dan Bisnis, merupakan fakultas yang menyelenggarakan pendidikan bagi mahasiswa di bidang Ekonomi dan Bisnis yang merancang untuk mempersiapkan 
+                    siswa secara mendalam untuk menjadi profesional yang memiliki kemampuan untuk mengejar ketinggalan dalam industri dinamis yang intens dan tantangan bisnis saat ini dan di masa depan. </p>
+            </div>
+        </div>
+
+        <div class="faculty">
+            <img src="image/fib.png" alt="Fakultas Ilmu Budaya">
+            <div class="faculty-content">
+                <h2>Fakultas Ilmu Budaya</h2>
+                <p>Fakultas Ilmu Budaya atau FIB merupakan lembaga yang berkomitmen menyelenggarakan pendidikan untuk kemajuan ilmu pengetahuan dan kebudayaan.
+                     Harapannya adalah mendapatkan umpan balik yang baik dari pemangku kepentingan.</p>
+            </div>
+        </div>
+
+        <div class="faculty">
+            <img src="image/Fkes.png" alt="Fakultas Kesehatan">
+            <div class="faculty-content">
+                <h2>Fakultas Kesehatan</h2>
+                <p>Universitas Dian Nuswantoro (UDINUS) melalui Fakultas Ilmu Kesehatan menyelenggarakan program sebagai upaya peningkatan sumber daya manusia di bidang kesehatan.
+                     Visi fakultas ini adalah menjadi pilihan pertama dalam pendidikan kesehatan yang didukung dengan teknologi dan keterampilan kewirausahaan.</p>
+            </div>
+        </div>
+
+        <div class="faculty">
+            <img src="image/FT.png" alt="Fakultas Teknik">
+            <div class="faculty-content">
+                <h2>Fakultas Teknik</h2>
+                <p>Fakultas Teknik Universitas Dian Nuswantoro membantu pemerintah membentuk tenaga teknis yang terdidik dan profesional. Di sektor industri dan dunia usaha, kebutuhan sumber daya manusia semakin meningkat. Sesuai dengan misinya,
+                     Fakultas Teknik membuka mata kuliah dengan kurikulum berbasis kompetensi dilengkapi fasilitas untuk memenuhi kebutuhan.</p>
+            </div>
+        </div>
+
+        <div class="faculty">
+            <img src="image/kedokteran.jpg" alt="Fakultas Kedokteran">
+            <div class="faculty-content">
+                <h2>Fakultas Kedokteran</h2>
+                <p>Fakultas Kedokteran Universitas Dian Nuswantoro disusun berdasarkan prinsip outcome-based curriculum dengan pendekatan strategi 
+                    pembelajaran yang digunakan adalah SPICES, yaitu student-centred, problem-based, integrative, community-based, early clinical exposure/elective, dan systematic.</p>
+            </div>
+        </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Universitas Dian Nuswantoro. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

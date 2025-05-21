@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi Dosen</title>
+
+    <style>
+        /* Reset Style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Style */
+        /* header {
+            background-color: #eceef4;
+            color: rgb(15, 41, 237);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        } 
+
+        /* Main Content Style */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .profile img {
+            flex: 1 1 150px;
+            max-width: 150px;
+            margin-right: 20px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-details {
+            flex: 2 1 60%;
+        }
+
+        .profile-details h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            margin-left: 50px;
+        }
+
+        .profile-details p {
+            margin-bottom: 10px;
+        }
+
+        /* Footer Style */
+         /* footer {
+            background-color: #0033cc;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }  */
+
+        /* BACKGROUND */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR PLG ATAS */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            width: 150px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: #0033cc;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: #0033cc;
+            border-radius: 5px;
+        }
+
+        nav ul li a.active {
+            background-color: #0033cc;
+            color: #ffcc00;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0033cc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            display: block;
+            padding: 10px 20px;
+            white-space: nowrap;
+            color: white;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #ffcc00;
+            color: #0033cc;
+        }
+
+        /* Header Styling */
+        header {
+    position: relative;
+    text-align: center;
+    background-color: #0033cc;
+    color: white;
+    padding: 50px 20px;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1); /* Shadow lebih gelap */
+    margin-bottom: 20px; /* Memberikan ruang di bawah header */
+}
+
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 24px;
+            color: #ffcc00;
+        }
+
+        /* udinus foto */
+
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            background-color: #0033cc;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .organisai {
+                flex-direction: column;
+            }
+
+            .organisai img {
+                width: 100%;
+            }
+        }
+    </style>
+    </style>
+</head>
+<body>
+
+        </header>
+        <nav>
+            <div class="logo-container">
+                <img src="image/udinus.jpg" alt="Logo" class="logo">
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a href="#">Profil</a>
+                    <ul>
+                        <li><a href="rektor.html">Rektor</a></li>
+                        <li><a href="dosen.html">Dosen</a></li>
+                        <li><a href="portiqbal.html">Mahasiswa 1</a></li>
+                        <li><a href="portosatria.html">Mahasiswa 2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Artikel</a>
+                    <ul>
+                        <li><a href="artikel.html">Apa Itu Bahasa Pemrograman</a></li>
+                        <li><a href="artikel2.html">Apa itu HTML?</a></li>
+                        <li><a href="artikelcss.html">Apa itu CSS?</a></li>
+                        <li><a href="artikel_JS.html">Apa itu JS?</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Formulir</a>
+                    <ul>
+                        <li><a href="#">Form 1</a></li>
+                        <li><a href="#">Form 2</a></li>
+                        <li><a href="#">Form 3</a></li>
+                        <li><a href="#">Form 4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Galeri</a>
+                    <ul>
+                        <li><a href="gallery.html">Kampus</a></li>
+                        <li><a href="kegiatan.html">Kegiatan</a></li>
+                        <li><a href="hmti.html">HMTI</a></li>
+                        <li><a href="doscom.html">DOSCOM</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- header bg biru -->
+         <br>
+        <header>
+            <h1>UNIVERSITAS DIAN NUSWANTORO</h1>
+            <h2>Himpunan Teknik Informatika</h2>
+        </header>
+    <div class="container">
+        <div class="profile">
+            <img src="image/cahayajatmoko.jpg" alt="Foto Dosen">
+            <div class="profile-details">
+                <h2>CAHAYA JATMOKO, M.Kom</h2>
+                <p ><strong>NIDN:</strong> 0614027402</p>
+                <p><strong>NPP:</strong> 0686.11.1998.146</p>
+                <p><strong>Home Base:</strong> A11</p>
+                <p><strong>Jabatan Fungsional:</strong> Lektor</p>
+                <p><strong>Status Staff:</strong> Aktif</p>
+                <p><strong>Golongan:</strong> III C</p>
+                <p><strong>Email:</strong> cahayajatmoko@dsn.dinus.ac.id<br>jatmoko02@gmail.com</p>
+                <p><strong>Blog:</strong> <a href="http://cahayaudinus14.blogspot.com/" target="_blank">http://cahayaudinus14.blogspot.com/</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Biografi Dosen - Semua Hak Dilindungi</p>
+    </footer>
+</body>
+</html>
