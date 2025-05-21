@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi Rektor</title>
+    <style>
+        /* Reset Style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* BACKGROUND */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR PLG ATAS */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            width: 150px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: #0033cc;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: #0033cc;
+            border-radius: 5px;
+        }
+
+        nav ul li a.active {
+            background-color: #0033cc;
+            color: #ffcc00;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0033cc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            display: block;
+            padding: 10px 20px;
+            white-space: nowrap;
+            color: white;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #ffcc00;
+            color: #0033cc;
+        }
+
+        /* Header Styling */
+        header {
+    position: relative;
+    text-align: center;
+    background-color: #0033cc;
+    color: white;
+    padding: 50px 20px;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1); /* Shadow lebih gelap */
+    margin-bottom: 20px; /* Memberikan ruang di bawah header */
+}
+
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 24px;
+            color: #ffcc00;
+        }
+
+        /* udinus foto */
+
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            background-color: #0033cc;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .organisai {
+                flex-direction: column;
+            }
+
+            .organisai img {
+                width: 100%;
+            }
+        }
+
+        /* Content Style */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 250px;
+            object-fit: cover;
+            
+        }
+
+        .profile h2 {
+            margin-top: 10px;
+            font-size: 22px;
+            color: #0046c0;
+        }
+
+        .profile .subtitle {
+            font-size: 16px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .content {
+            margin-top: 20px;
+            text-align: justify;
+        }
+
+        /* Footer Style */
+        footer {
+            background-color: #0046c0;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="image/udinus.jpg" alt="Logo" class="logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Profil</a>
+                <ul>
+                    <li><a href="rektor.html">Rektor</a></li>
+                    <li><a href="dosen.html">Dosen</a></li>
+                    <li><a href="portiqbal.html">Mahasiswa 1</a></li>
+                    <li><a href="portosatria.html">Mahasiswa 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Artikel</a>
+                <ul>
+                    <li><a href="artikel.html">Apa Itu Bahasa Pemrograman</a></li>
+                    <li><a href="artikel2.html">Apa itu HTML?</a></li>
+                    <li><a href="artikelcss.html">Apa itu CSS?</a></li>
+                    <li><a href="artikel_JS.html">Apa itu JS?</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Formulir</a>
+                <ul>
+                    <li><a href="#">Form 1</a></li>
+                    <li><a href="#">Form 2</a></li>
+                    <li><a href="#">Form 3</a></li>
+                    <li><a href="#">Form 4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Galeri</a>
+                <ul>
+                    <li><a href="gallery.html">Kampus</a></li>
+                    <li><a href="kegiatan.html">Kegiatan</a></li>
+                    <li><a href="hmti.html">HMTI</a></li>
+                    <li><a href="doscom.html">DOSCOM</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- header bg biru -->
+     <br>
+    <header>
+        <h1>UNIVERSITAS DIAN NUSWANTORO</h1>
+        <h2>Himpunan Teknik Informatika</h2>
+    </header>
+
+<div class="container">
+    <div class="profile">
+        <img src="image/rektor.png" alt="Foto Rektor">
+        <h2>Prof. Dr. Ir. Edi Noersasongko, M.Kom.</h2>
+        <p class="subtitle">Rektor Universitas Dian Nuswantoro</p>
+    </div>
+
+    <div class="content">
+        <p>
+            Beliau adalah sosok yang luar biasa. Siapa sangka, dulunya hanya seorang penjaga toko biasa, namun kini telah
+            menjadi rektor sebuah universitas ternama di Jawa Tengah. Berbekal tekad dan ketekunan, ia mampu meraih kesuksesan dalam hidup. Segala yang diinginkannya selalu ia buktikan dengan sungguh-sungguh.
+        </p>
+        <p>
+            Sebelum mendirikan sekolah komputer, Edi pernah bercita-cita menjadi pilot dan pedagang batik. Rasa ingin tahu yang tinggi membuat komputer menarik perhatiannya, yang kemudian mendorongnya untuk mendaftar di kursus komputer di Kelompok Kursus & Studi Jakarta. Selama kehidupannya di kampus, ia bekerja sebagai perwakilan pemasaran di PT. Pure Kumia Abadi dan PT EDP Assistance Essex Indonesia. Setelah meninggalkan dunia batik yang lama ia geluti, pada tahun 1983 ia lulus sebagai Sarjana Komputer, salah satu yang pertama di Indonesia. Tidak lama kemudian, ia bekerja di MDS Cantel sebagai Sistem Analis Komputer, dan mengajar di Lembaga Pendidikan Komputer Amerika Indonesia (LPKIA).
+        </p>
+        <p>
+            Tahun 1988, ia kembali ke Semarang dan mendirikan lembaga pendidikan komputer, yang kemudian berkembang menjadi Universitas Dian Nuswantoro.
+        </p>
+    </div>
+</div>
+<br>
+<br>
+<footer>
+    <p>&copy; 2024 Biografi Rektor - Semua Hak Dilindungi</p>
+</footer>
+
+</body>
+</html>
